@@ -1,6 +1,6 @@
 <?php
 
-namespace FrequenceWeb\Bundle\HermesBundle\Controller;
+namespace Hermes\Bundle\HermesBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
