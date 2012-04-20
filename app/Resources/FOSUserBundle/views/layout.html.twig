@@ -1,0 +1,12 @@
+{% extends "HermesHermesBundle::layout.html.twig" %}
+
+{% block title %}{% endblock %}
+
+{% block hermes_content %}
+    {% for key, message in app.session.getFlashes() %}
+    <div class="{{ key }}">
+        {{ message|trans({}, 'FOSUserBundle') }}
+    </div>
+    {% endfor %}
+    {% block fos_user_content %}{% endblock %}
+{% endblock %}
