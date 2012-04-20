@@ -2,10 +2,12 @@
 
 namespace Hermes\Bundle\HermesBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping as ORM,
+    Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * Hermes\Bundle\HermesBundle\Entity\SubscriberList
+ * Contains subscribers who are stored by mongodb
  *
  * @ORM\Table(name="subscriber_list")
  * @ORM\Entity()
@@ -42,6 +44,12 @@ class SubscriberList
      * @ORM\Column(name="public", type="boolean", nullable=true)
      */
     private $public;
+
+    /**
+     * @Gedmo\Slug(fields={"name"}, updatable=false, unique=true)
+     * @ORM\Column(name="slug", type="string", length=255, unique=true)
+     */
+    private $slug;
 
     /**
      * Get id
@@ -117,5 +125,37 @@ class SubscriberList
     public function isPublic()
     {
         return $this->public;
+    }
+
+    /**
+     * Get public
+     *
+     * @return boolean 
+     */
+    public function getPublic()
+    {
+        return $this->public;
+    }
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     * @return SubscriberList
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+        return $this;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string 
+     */
+    public function getSlug()
+    {
+        return $this->slug;
     }
 }
