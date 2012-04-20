@@ -8,8 +8,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class InterfaceController extends Controller
 {
     
-    public function indexAction($name)
+    public function indexAction()
     {
-        return $this->render('FrequenceWebHermesBundle:Interface:index.html.twig', array('name' => $name));
+        return $this->render('FrequenceWebHermesBundle:Interface:index.html.twig');
     }
 }
