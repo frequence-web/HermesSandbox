@@ -10,6 +10,6 @@ class InterfaceController extends Controller
     
     public function indexAction()
     {
-        return $this->render('FrequenceWebHermesBundle:Interface:index.html.twig');
+        return $this->render('HermesHermesBundle:Interface:index.html.twig');
     }
 }

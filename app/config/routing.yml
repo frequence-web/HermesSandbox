@@ -1,5 +1,5 @@
 HermesHermesBundle:
-    resource: "@FrequenceWebHermesBundle/Resources/config/routing.yml"
+    resource: "@HermesHermesBundle/Resources/config/routing.yml"
     prefix:   /
 
 # Internal routing configuration to handle ESI
