@@ -1,5 +1,5 @@
 {
-    "hash": "9f166bb300e1950423791597a6b42562",
+    "hash": "997f00c34e720778273a1da977cbfc7f",
     "packages": [
         {
             "package": "doctrine/common",
@@ -15,8 +15,33 @@
             "source-reference": "dd3d35dd28e864fb908a70f8b206d1209aa2c333"
         },
         {
+            "package": "doctrine/mongodb",
+            "version": "dev-master",
+            "source-reference": "727a12d25ba12d18aa293bc6eb61f203a9545912"
+        },
+        {
+            "package": "doctrine/mongodb-odm",
+            "version": "dev-master",
+            "source-reference": "ed789d7e7d5a75d41b8d49e04a4c65bd97343a96"
+        },
+        {
+            "package": "doctrine/mongodb-odm-bundle",
+            "version": "dev-master",
+            "source-reference": "9aa933e9c50fb8d58f9d49fb57a6e66a6a57d6d0"
+        },
+        {
             "package": "doctrine/orm",
             "version": "2.2.0"
+        },
+        {
+            "package": "friendsofsymfony/user-bundle",
+            "version": "dev-master",
+            "source-reference": "59caf8902291b42e86dc8b4ea1aa19e9f30afff8"
+        },
+        {
+            "package": "gedmo/doctrine-extensions",
+            "version": "dev-master",
+            "source-reference": "ec5f3a680b127ebb3b5ae7caaea978d20a08af50"
         },
         {
             "package": "jms/aop-bundle",
@@ -60,7 +85,12 @@
         {
             "package": "sensio/generator-bundle",
             "version": "dev-master",
-            "source-reference": "06d07e0514d310be8d5630bfd93637136991c30c"
+            "source-reference": "5f2ded5e5679f66c604f128d5650715bb81d7d7c"
+        },
+        {
+            "package": "stof/doctrine-extensions-bundle",
+            "version": "dev-master",
+            "source-reference": "f141a698d65271a18d86469c1f7b29d7e24170dd"
         },
         {
             "package": "swiftmailer/swiftmailer",
@@ -89,7 +119,7 @@
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "03752564a0c26231a06967bc05e95178853b0b85",
+            "source-reference": "9d22eb60073103858439ec636ef74e8210fbc9df",
             "alias": "2.1.9999999.9999999-dev"
         },
         {
@@ -100,7 +130,7 @@
         {
             "package": "twig/twig",
             "version": "dev-master",
-            "source-reference": "037f86aa550737abf633e991f3606b9de5a69657",
+            "source-reference": "0add6e23771bf44d8ee643c555597b87ae4a598b",
             "alias": "1.7.9999999.9999999-dev"
         }
     ],
