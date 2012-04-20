@@ -33,7 +33,7 @@ class SubscriberList
     /**
      * @var string $description
      * 
-     * @ORM\Column(name="description", type="text")
+     * @ORM\Column(name="description", type="text", nullable=true)
      */
     private $description;
 
@@ -50,6 +50,13 @@ class SubscriberList
      * @ORM\Column(name="slug", type="string", length=255, unique=true)
      */
     private $slug;
+
+    /**
+     * @var FOS\UserBundle\Entity\Group
+     *
+     * @ORM\ManyToOne(targetEntity="FOS\UserBundle\Entity\Group")
+     */
+    private $client;
 
     /**
      * Get id
@@ -157,5 +164,27 @@ class SubscriberList
     public function getSlug()
     {
         return $this->slug;
+    }
+
+    /**
+     * Set client
+     *
+     * @param FOS\UserBundle\Entity\Group $client
+     * @return SubscriberList
+     */
+    public function setClient(\FOS\UserBundle\Entity\Group $client = null)
+    {
+        $this->client = $client;
+        return $this;
+    }
+
+    /**
+     * Get client
+     *
+     * @return FOS\UserBundle\Entity\Group 
+     */
+    public function getClient()
+    {
+        return $this->client;
     }
 }
