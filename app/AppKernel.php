@@ -24,8 +24,9 @@ class AppKernel extends Kernel
             // Application bundles
             new Hermes\Bundle\HermesBundle\HermesHermesBundle(),
 
-            // External bundles
+            // Extra bundles
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
+            new Doctrine\Bundle\MongoDBBundle\DoctrineMongoDBBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
