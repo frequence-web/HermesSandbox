@@ -3,6 +3,9 @@ security:
         fos_userbundle:
             id: fos_user.user_manager
 
+    encoders:
+        "FOS\UserBundle\Model\UserInterface": sha512
+
     firewalls:
         main:
             pattern:      .*
@@ -19,8 +22,8 @@ security:
             anonymous:    true
 
     role_hierarchy:
-        ROLE_ADMIN:      ROLE_USER
-        ROLE_SUPERADMIN: ROLE_ADMIN
+        ROLE_ADMIN:       ROLE_USER
+        ROLE_SUPER_ADMIN: ROLE_ADMIN
 
     access_control:
         # Liste des pages accessibles à tous les utilisateurs (ne pas toucher)
@@ -34,7 +37,7 @@ security:
         - { path: ^/resseting$, role: IS_AUTHENTICATED_ANONYMOUSLY }
 
         # PAGES ACCESSIBLES AUX ADMINISTRATEURS
-        - { path: ^/admin/, role: HERMES_ROLE_ADMIN }
+        - { path: ^/admin/, role: ROLE_ADMIN }
 
         # PAGES ACCESSIBLES AUX UTILISATEURS CONNECTES
-        - { path: ^/change-password, role: HERMES_ROLE_USER }
+        - { path: ^/change-password, role: ROLE_USER }

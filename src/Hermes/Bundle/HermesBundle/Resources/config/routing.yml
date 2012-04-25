@@ -1,3 +1,8 @@
 homepage:
     pattern:  /
     defaults: { _controller: HermesHermesBundle:Interface:index }
+
+admin_template:
+    resource: '@HermesHermesBundle/Controller/Admin/TemplateController.php'
+    type:     annotation
+    prefix:   '/admin/template'

@@ -54,7 +54,7 @@ class SubscriberList
     /**
      * @var FOS\UserBundle\Entity\Group
      *
-     * @ORM\ManyToOne(targetEntity="FOS\UserBundle\Entity\Group")
+     * @ORM\ManyToOne(targetEntity="Client")
      */
     protected $client;
 

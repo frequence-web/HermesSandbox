@@ -1,5 +1,6 @@
 parameters:
     database_driver:   pdo_mysql
+    database_socket:   /tmp/mysql.sock
     database_host:     localhost
     database_port:     ~
     database_name:     hermes-sandbox

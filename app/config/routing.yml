@@ -2,6 +2,10 @@ HermesHermesBundle:
     resource: "@HermesHermesBundle/Resources/config/routing.yml"
     prefix:   /
 
+FrequenceWebDashboardBundle:
+    resource: "@FrequenceWebDashboardBundle/Resources/config/routing.xml"
+    prefix: /admin
+
 # Routes for make fosuserbundle working
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
