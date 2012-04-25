@@ -16,26 +16,26 @@ class SubscriberList
 {
     /**
      * @var integer $id
-     * 
+     *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string $name
      *
      * @ORM\Column(name="name", type="string", length=255)
      */
-    private $name;
+    protected $name;
 
     /**
      * @var string $description
-     * 
+     *
      * @ORM\Column(name="description", type="text", nullable=true)
      */
-    private $description;
+    protected $description;
 
     /**
      * Determine if the list is accessible or not
@@ -43,25 +43,25 @@ class SubscriberList
      *
      * @ORM\Column(name="public", type="boolean", nullable=true)
      */
-    private $public;
+    protected $public;
 
     /**
      * @Gedmo\Slug(fields={"name"}, updatable=false, unique=true)
      * @ORM\Column(name="slug", type="string", length=255, unique=true)
      */
-    private $slug;
+    protected $slug;
 
     /**
      * @var FOS\UserBundle\Entity\Group
      *
      * @ORM\ManyToOne(targetEntity="FOS\UserBundle\Entity\Group")
      */
-    private $client;
+    protected $client;
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -83,7 +83,7 @@ class SubscriberList
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -105,7 +105,7 @@ class SubscriberList
     /**
      * Get description
      *
-     * @return text 
+     * @return text
      */
     public function getDescription()
     {
@@ -127,7 +127,7 @@ class SubscriberList
     /**
      * Get public
      *
-     * @return boolean 
+     * @return boolean
      */
     public function isPublic()
     {
@@ -137,7 +137,7 @@ class SubscriberList
     /**
      * Get public
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getPublic()
     {
@@ -159,7 +159,7 @@ class SubscriberList
     /**
      * Get slug
      *
-     * @return string 
+     * @return string
      */
     public function getSlug()
     {
@@ -181,7 +181,7 @@ class SubscriberList
     /**
      * Get client
      *
-     * @return FOS\UserBundle\Entity\Group 
+     * @return FOS\UserBundle\Entity\Group
      */
     public function getClient()
     {

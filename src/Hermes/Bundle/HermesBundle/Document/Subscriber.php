@@ -10,34 +10,34 @@ use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
  *
  * @MongoDB\Document(collection="subscriber")
  */
-class Subscriber {
-
+class Subscriber
+{
     /**
      * @var string $id
      * @MongoDB\Id
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string $email
-     * 
+     *
      * @MongoDB\String
      */
-    private $email;
+    protected $email;
 
     /**
      * @var string $locale
      *
      * @MongoDB\String
      */
-    private $locale;
+    protected $locale;
 
     /**
      * @var string $list
      *
      * @MongoDB\String
      */
-    private $list;
+    protected $list;
 
     /**
      * Get id
