@@ -40,6 +40,20 @@ class Subscriber
     protected $list;
 
     /**
+    * @var array
+    *
+    * @MongoDB\Hash
+    */
+    protected $params;
+
+    /**
+     * @var \DateTime $createdAt
+     * @Gedmo\Timestampable(on="create")
+     * @MongoDB\Date
+     */
+    protected $createdAt;
+
+    /**
      * Get id
      *
      * @return id $id
@@ -57,6 +71,7 @@ class Subscriber
     public function setEmail($email)
     {
         $this->email = $email;
+        return $this;
     }
 
     /**
@@ -77,6 +92,7 @@ class Subscriber
     public function setLocale($locale)
     {
         $this->locale = $locale;
+        return $this;
     }
 
     /**
@@ -97,6 +113,7 @@ class Subscriber
     public function setList($list)
     {
         $this->list = $list;
+        return $this;
     }
 
     /**
@@ -107,5 +124,41 @@ class Subscriber
     public function getList()
     {
         return $this->list;
+    }
+
+    /**
+     * Add a param
+     *
+     * @param string $param
+     */
+    public function addParam($key, $value)
+    {
+        $this->params[$key] = $value;
+        return $this;
+    }
+
+    /**
+     * Add an array of params
+     *
+     * @param array $params
+     */
+    public function addParams(array $params)
+    {
+        if(!is_array($this->params)) {
+            $this->params = array();
+        }
+        $this->params = array_merge($this->params, $params);
+
+        return $this;
+    }
+
+    /**
+     * Get params
+     *
+     * @return string $params
+     */
+    public function getParams()
+    {
+        return $this->params;
     }
 }
