@@ -24,12 +24,12 @@ class SubscriberController extends Controller
         $request = $this->getRequest();
 
         $subscriber = new Subscriber();
-        $subscriber     ->setEmail($request->getParameter('email'))
-                        ->setParams($request->setParameter('params'))
-                        ->setLocale($request->setParameter('locale'));
+        $subscriber     ->setEmail($request->request->get('email'))
+                        ->addParams($request->request->get('params'))
+                        ->setLocale($request->request->get('locale'));
 
         $em = $this->getDoctrine()->getManager('default');
-        $slug = $request->getParameter('list');
+        $slug = $request->request->get('list');
         $list = $em->getRepository('HermesHermesBundle:SubscriberList')->findBySlug($slug);
 
         if (!$list) {
@@ -41,7 +41,15 @@ class SubscriberController extends Controller
         $validator = $this->get('validator');
         $errors = $validator->validate($subscriber);
 
-        
+        // If the request is from post, it is possible that the client is a webbrowser
+        // We also support redirecting
+        if ($request->getMethod() == 'POST') {
+            $url = $request->request->get('redirection');
+            if(!empty($url)) {
+
+                return $this->redirect($url);
+            }
+        }
 
         if (count($errors) > 0) {
 
@@ -53,7 +61,7 @@ class SubscriberController extends Controller
             return $this->jsonResponse(array(
                 'success'   => false,
                 'errors'    => $errors
-            ))
+            ));
         }
     }
 

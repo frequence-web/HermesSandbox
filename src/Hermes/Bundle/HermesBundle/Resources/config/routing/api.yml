@@ -2,10 +2,10 @@ api_add_subscriber:
     pattern: /subscriber/add.json
     defaults: { _controller: "HermesHermesBundle:Api/Subscriber:add" }
     requirements:
-        _method: [PUT, POST]
+        _method: PUT|POST
 
-api_add_subscriber:
+api_add_subscriber_intl:
     pattern: /{_locale}/subscriber/add.json
     defaults: { _controller: "HermesHermesBundle:Api/Subscriber:add" }
     requirements:
-        _method: [PUT, POST]
+        _method: PUT|POST

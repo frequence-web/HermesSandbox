@@ -20,7 +20,7 @@
         "doctrine/mongodb-odm-bundle": "dev-master",
         "friendsofsymfony/user-bundle": "dev-master",
         "stof/doctrine-extensions-bundle": "dev-master",
-        "frequence-web/dashboard-bundle": "dev-master"
+        "doctrine/doctrine-fixtures-bundle": "dev-master"
     },
     "repositories": {
         "frequence-web": {

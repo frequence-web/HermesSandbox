@@ -2,7 +2,8 @@
 
 namespace Hermes\Bundle\HermesBundle\Document;
 
-use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
+use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB,
+    Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * Hermes\Bundle\HermesBundle\Entity\Subscriber
@@ -142,8 +143,11 @@ class Subscriber
      *
      * @param array $params
      */
-    public function addParams(array $params)
+    public function addParams($params)
     {
+        if(!is_array($params)) {
+            return $this;
+        }
         if(!is_array($this->params)) {
             $this->params = array();
         }
