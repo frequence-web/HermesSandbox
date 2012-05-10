@@ -1,0 +1,3 @@
+[submodule "src/Hermes/Bundle/HermesBundle"]
+	path = src/Hermes/Bundle/HermesBundle
+	url = git@github.com:frequence-web/HermesHermesBundle.git
